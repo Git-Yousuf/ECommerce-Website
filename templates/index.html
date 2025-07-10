@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>AgriGo</title>
+
+    <!-- Link for Logo in Title -->
+    <link rel="icon" href="" type="image/icon type" />
+
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/65eed8ca1e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Font Cursive -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google Font Normal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Original CSS File -->
+    <link rel="stylesheet" href="{% static 'css/Style.css' %}" />
+  </head>
+  <body>
+    <section id="home">
+      <img src="{% static 'images/home/bg.webp' %}" alt="Background Image" />
+      <header>
+        <div>
+          <nav>
+            <div>
+              <a href="#home">Home</a>
+              <a href="#items">Categories</a>
+              <a href="#products">Products</a>
+              <a href="#testimony">Testimony</a>
+              <a href="#blog">Blog</a>
+            </div>
+            <div class="login-signup">
+              {% if username %}
+              <button class="hover-btn-cart">
+                <a href="/Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+                <span id="message-cart" class="message-cart">Cart</span>
+              </button>
+              <div class="login-content">
+                <p>Hii {{ username }}!</p>
+                <button class="hover-btn">
+                  <a href="{% url 'Logout' %}" class="logout-btn">Logout</a>
+                  <span id="message" class="message">LogOut</span>
+                </button>
+              </div>
+              {% else %}
+
+              <a class="LoginSignup-btn" href="{% url 'LoginSignup' %}">
+                <i class="fa-solid fa-user"></i>Login</a
+              >
+              <span id="message" class="message">LogIn / SignUp</span>
+
+              {% endif %}
+            </div>
+            <ul class="bar-icon">
+              <li class="bar"></li>
+              <li class="bar"></li>
+              <li class="bar"></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="text">
+        <h1>Experience the Freshness</h1>
+        <h1>Directly From the Farmers...!</h1>
+        <p>
+          Agrigo is an innovative agricultural platform leveraging technology to
+          optimize farming practices. It integrates IoT, AI, and data analytics
+          to enhance crop yield, monitor soil health, and manage resources
+          efficiently.
+        </p>
+        <div>
+          <button>About</button>
+          <button><a href="/AllItems" class="anchor">Buy Now</a></button>
+        </div>
+      </div>
+      <div class="logo">
+        <div>
+          <img
+            src="{% static 'images/home/AgriGo-logo.png' %}"
+            alt="AgriGo Logo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="items">
+      <!-- <marquee behavior="" direction="left" scrollAmount="5"> -->
+      <div class="marquee-items">
+        <div class="marquee-item-one">
+          <div>
+            <span>
+              <img
+                src="{% static 'images/icons/shipped.png' %}"
+                alt="Shipped Image"
+              />
+            </span>
+          </div>
+          <h1>Free Shipping</h1>
+          <p>On Order Above 500RS</p>
+        </div>
+        <div class="marquee-item-two">
+          <div>
+            <span>
+              <img
+                src="{% static 'images/icons/fruits-and-vegetables.png' %}"
+                alt="Fruits and Vegetables Image"
+              />
+            </span>
+          </div>
+          <h1>Always Fresh</h1>
+          <p>Well versed package</p>
+        </div>
+        <div class="marquee-item-three">
+          <div>
+            <span>
+              <img
+                src="{% static 'images/icons/achieve.png' %}"
+                alt="Achieve Image"
+              />
+            </span>
+          </div>
+          <h1>Superior Quality</h1>
+          <p>Quality Product on Time</p>
+        </div>
+        <div class="marquee-item-four">
+          <div>
+            <span>
+              <img
+                src="{% static 'images/icons/customer-service.png' %}"
+                alt="Achieve Image"
+              />
+            </span>
+          </div>
+          <h1>Support</h1>
+          <p>Provided with 24/7 Support</p>
+        </div>
+      </div>
+      <!-- </marquee> -->
+    </section>
+
+    <section id="categories">
+      <div class="category-heading">
+        <h1>Categories</h1>
+        <div>
+          <!-- <button><i class="fa-solid fa-caret-left"></i></button>
+                <button><i class="fa-solid fa-caret-right"></i></button> -->
+
+          <a href="{% url 'AllItems' %}" class="anchor">
+            <button>
+              <div>View All <i class="fa-solid fa-arrow-right"></i></div>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="category-cards">
+        <div class="categories-vegetables">
+          <img
+            src="{% static 'images/categories/veg-2.jpeg' %}"
+            alt="Categories Veg Image"
+          />
+          <h1>Vegetables</h1>
+        </div>
+        <div class="categories-fruits">
+          <img
+            src="{% static 'images/categories/fruits-2.jpeg' %}"
+            alt="Categories Fruits Image"
+          />
+          <h1>Fruits</h1>
+        </div>
+        <div class="categories-crops">
+          <img
+            src="{% static 'images/categories/crops-2.jpg' %}"
+            alt="Categories Crops Image"
+          />
+          <h1>Crops</h1>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="products-heading">
+        <h1>Featured Products</h1>
+      </div>
+      <div class="products-cards">
+        <div class="products-card" id="product-one">
+          <img
+            src="{% static 'images/products/carrot.jpg' %}"
+            alt="Carrot Image"
+          />
+          <div>
+            <h1>Carrot</h1>
+            <p>100$/Kg</p>
+          </div>
+          <!-- <div>
+            <div>
+              <button><i class="fa-solid fa-minus"></i></button>
+              <p class="counter">1</p>
+              <button><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div>
+              <button>
+                <a href="{% url 'add_to_cart' item_code=1 %}">Add to cart</a>
+              </button>
+
+              <!--  <i class="fa-solid fa-cart-shopping"></i> --
+            </div>
+          </div> -->
+        </div>
+        <div class="products-card" id="product-two">
+          <img
+            src="{% static 'images/products/capsicum.jpg' %}"
+            alt="Capsicum Image"
+          />
+          <div>
+            <h1>Capsicum</h1>
+            <p>120$/Kg</p>
+          </div>
+          <!-- <div>
+            <div>
+              <button><i class="fa-solid fa-minus"></i></button>
+              <p class="counter">1</p>
+              <button><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div>
+              <button>
+                <a href="{% url 'add_to_cart' item_code=2 %}">Add to cart</a>
+              </button>
+              <!--  <i class="fa-solid fa-cart-shopping"></i> --
+            </div>
+          </div> -->
+        </div>
+        <div class="products-card" id="product-three">
+          <img
+            src="{% static 'images/products/cabbage.jpg' %}"
+            alt="Cabbage Image"
+          />
+          <div>
+            <h1>Cabbage</h1>
+            <p>80$/Kg</p>
+          </div>
+          <!-- <div>
+            <div>
+              <button><i class="fa-solid fa-minus"></i></button>
+              <p class="counter">1</p>
+              <button><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div>
+              <button>
+                <a href="{% url 'add_to_cart' item_code=3 %}">Add to cart</a>
+              </button>
+              <!--  <i class="fa-solid fa-cart-shopping"></i> --
+            </div>
+          </div> -->
+        </div>
+        <div class="products-card" id="product-four">
+          <img
+            src="{% static 'images/products/brocolli.jpg' %}"
+            alt="Brocolli Image"
+          />
+          <div>
+            <h1>Brocolli</h1>
+            <p>50$/Kg</p>
+          </div>
+          <!-- <div>
+            <div>
+              <button><i class="fa-solid fa-minus"></i></button>
+              <p class="counter">1</p>
+              <button><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div>
+              <button>
+                <a href="{% url 'add_to_cart' item_code=4 %}">Add to cart</a>
+              </button>
+              <!--  <i class="fa-solid fa-cart-shopping"></i> --
+            </div>
+          </div> -->
+        </div>
+        <div class="products-card" id="product-five">
+          <img src="{% static 'images/products/peas.jpg' %}" alt="Peas Image" />
+          <div>
+            <h1>Peas</h1>
+            <p>30$/Kg</p>
+          </div>
+          <!-- <div>
+            <div>
+              <button><i class="fa-solid fa-minus"></i></button>
+              <p class="counter">1</p>
+              <button><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div>
+              <button>
+                <a href="{% url 'add_to_cart' item_code=5 %}">Add to cart</a>
+              </button>
+              <!--  <i class="fa-solid fa-cart-shopping"></i> --
+            </div>
+          </div> -->
+        </div>
+        <div class="products-card" id="product-six">
+          <img
+            src="{% static 'images/products/strawberry.jpg' %}"
+            alt="Strawberry Image"
+          />
+          <div>
+            <h1>Strawberry</h1>
+            <p>70$/Kg</p>
+          </div>
+          <!-- <div>
+            <div>
+              <button><i class="fa-solid fa-minus"></i></button>
+              <p class="counter">1</p>
+              <button><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div>
+              <button>
+                <a href="{% url 'add_to_cart' item_code=6 %}">Add to cart</a>
+              </button>
+              <!--  <i class="fa-solid fa-cart-shopping"></i> --
+            </div>
+          </div> -->
+        </div>
+        <div class="products-card" id="product-seven">
+          <img
+            src="{% static 'images/products/freshJuice.jpg' %}"
+            alt="FreshJuice Image"
+          />
+          <div>
+            <h1>Fresh Juice</h1>
+            <p>150$/Kg</p>
+          </div>
+          <!-- <div>
+            <div>
+              <button><i class="fa-solid fa-minus"></i></button>
+              <p class="counter">1</p>
+              <button><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div>
+              <button>
+                <a href="{% url 'add_to_cart' item_code=7 %}">Add to cart</a>
+              </button>
+              <!--  <i class="fa-solid fa-cart-shopping"></i> --
+            </div>
+          </div> -->
+        </div>
+        <div class="products-card" id="product-eight">
+          <img
+            src="{% static 'images/products/tomato.jpg' %}"
+            alt="Tomato Image"
+          />
+          <div>
+            <h1>Tomato</h1>
+            <p>200$/Kg</p>
+          </div>
+          <!-- <div>
+            <div>
+              <button><i class="fa-solid fa-minus"></i></button>
+              <p class="counter">1</p>
+              <button><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div>
+              <button>
+                <a href="{% url 'add_to_cart' item_code=8 %}">Add to cart</a>
+              </button>
+              <!--  <i class="fa-solid fa-cart-shopping"></i> --
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="product-button">
+        <button>
+          <div><a href="{% url 'AllItems' %}">Explore</a></div>
+          <!-- <i class="fa-solid fa-arrow-right"></i> -->
+        </button>
+      </div>
+    </section>
+
+    <section id="offers">
+      <div class="overall">
+        <img src="{% static 'images/offers/bg_3.jpg' %}" alt="Offers Image" />
+        <div class="offers-text">
+          <h1>Get 10% Discount on your first Purchase</h1>
+          <form>
+            <div>
+              <input type="text" placeholder="Name" class="offers-text-name" />
+            </div>
+            <div>
+              <input
+                type="email"
+                placeholder="Email"
+                class="offers-text-email"
+              />
+            </div>
+            <div>
+              <input type="checkbox" id="check" class="offers-text-check" />
+              <label for="check">Subscribe to our newletter.</label>
+            </div>
+            <div>
+              <input type="submit" value="Submit" class="offers-text-submit" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimony">
+      <div class="overall">
+        <div class="testimony-heading">
+          <h1>Testimony</h1>
+          <p>What Our Satisfied Customers Says</p>
+        </div>
+        <div class="testimony-cards">
+          <div class="testimony-card testimony-one">
+            <div>
+              <img
+                src="{% static 'images/Testimony/person_1.jpg' %}"
+                alt="Person Image"
+              />
+              <div>
+                <i class="fa-solid fa-quote-left"></i>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
+              expedita dicta libero omnis. Quibusdam maxime adipisci numquam
+              natus cumque debitis.
+            </p>
+            <h1>Dwayne Smith</h1>
+          </div>
+          <div class="testimony-card testimony-two">
+            <div>
+              <img
+                src="{% static 'images/Testimony/person_1.jpg' %}"
+                alt="Person Image"
+              />
+              <div>
+                <i class="fa-solid fa-quote-left"></i>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
+              expedita dicta libero omnis. Quibusdam maxime adipisci numquam
+              natus cumque debitis.
+            </p>
+            <h1>Dwayne Smith</h1>
+          </div>
+          <div class="testimony-card testimony-three">
+            <div>
+              <img
+                src="{% static 'images/Testimony/person_1.jpg' %}"
+                alt="Person Image"
+              />
+              <div>
+                <i class="fa-solid fa-quote-left"></i>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
+              expedita dicta libero omnis. Quibusdam maxime adipisci numquam
+              natus cumque debitis.
+            </p>
+            <h1>Dwayne Smith</h1>
+          </div>
+          <div class="testimony-card testimony-four">
+            <div>
+              <img
+                src="{% static 'images/Testimony/person_1.jpg' %}"
+                alt="Person Image"
+              />
+              <div>
+                <i class="fa-solid fa-quote-left"></i>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
+              expedita dicta libero omnis. Quibusdam maxime adipisci numquam
+              natus cumque debitis.
+            </p>
+            <h1>Dwayne Smith</h1>
+          </div>
+          <div class="testimony-card testimony-five">
+            <div>
+              <img
+                src="{% static 'images/Testimony/person_1.jpg' %}"
+                alt="Person Image"
+              />
+              <div>
+                <i class="fa-solid fa-quote-left"></i>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
+              expedita dicta libero omnis. Quibusdam maxime adipisci numquam
+              natus cumque debitis.
+            </p>
+            <h1>Dwayne Smith</h1>
+          </div>
+          <div class="testimony-card testimony-six">
+            <div>
+              <img
+                src="{% static 'images/Testimony/person_1.jpg' %}"
+                alt="Person Image"
+              />
+              <div>
+                <i class="fa-solid fa-quote-left"></i>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
+              expedita dicta libero omnis. Quibusdam maxime adipisci numquam
+              natus cumque debitis.
+            </p>
+            <h1>Dwayne Smith</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="overall">
+        <div class="blog-cards">
+          <div class="blog-card blog-card-one">
+            <img
+              src="{% static 'images/blog/category-1.jpg' %}"
+              alt="Category 1 Image"
+            />
+            <div>
+              <h1>Lorem, ipsum.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                animi nostrum ducimus consequatur optio quisquam alias.
+              </p>
+            </div>
+          </div>
+          <div class="blog-card blog-card-two">
+            <img
+              src="{% static 'images/blog/blog-img-01.jpg' %}"
+              alt="Blog 1 Image"
+            />
+            <div>
+              <h1>Lorem, ipsum.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                animi nostrum ducimus consequatur optio quisquam alias.
+              </p>
+            </div>
+          </div>
+          <div class="blog-card blog-card-three">
+            <img
+              src="{% static 'images/blog/category-2.jpg' %}"
+              alt="Category 2 Image"
+            />
+            <div>
+              <h1>Lorem, ipsum.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                animi nostrum ducimus consequatur optio quisquam alias.
+              </p>
+            </div>
+          </div>
+          <div class="blog-card blog-card-four">
+            <img
+              src="{% static 'images/blog/post-thumb-1.jpg' %}"
+              alt="Post Thumb 1 Image"
+            />
+            <div>
+              <h1>Lorem, ipsum.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                animi nostrum ducimus consequatur optio quisquam alias.
+              </p>
+            </div>
+          </div>
+          <div class="blog-card blog-card-five">
+            <h1>Blog</h1>
+            <a href="https://bloggers.feedspot.com/vegetable_gardening_blogs/">
+              <button>View All</button>
+            </a>
+          </div>
+          <div class="blog-card blog-card-six">
+            <img
+              src="{% static 'images/blog/post-thumb-2.jpg' %}"
+              alt="Post Thumb 2 Image"
+            />
+            <div>
+              <h1>Lorem, ipsum.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                animi nostrum ducimus consequatur optio quisquam alias.
+              </p>
+            </div>
+          </div>
+          <div class="blog-card blog-card-seven">
+            <img
+              src="{% static 'images/blog/blog-img-02.jpg' %}"
+              alt="Blog 2 Image"
+            />
+            <div>
+              <h1>Lorem, ipsum.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                animi nostrum ducimus consequatur optio quisquam alias.
+              </p>
+            </div>
+          </div>
+          <div class="blog-card blog-card-eight">
+            <img
+              src="{% static 'images/blog/category-3.jpg' %}"
+              alt="Category 3 Image"
+            />
+            <div>
+              <h1>Lorem, ipsum.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                animi nostrum ducimus consequatur optio quisquam alias.
+              </p>
+            </div>
+          </div>
+          <div class="blog-card blog-card-nine">
+            <img
+              src="{% static 'images/blog/blog-img-03.jpg' %}"
+              alt="Blog 3 Image"
+            />
+            <div>
+              <h1>Lorem, ipsum.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                animi nostrum ducimus consequatur optio quisquam alias.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="downloadApp">
+      <div class="overall">
+        <div class="container">
+          <img
+            src="{% static 'images/downloadApp/phone.png' %}"
+            alt="Mobile Image"
+          />
+          <div>
+            <h1>Shop Faster with AgriGo App</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti
+              repellendus similique hic sapiente modi, dignissimos possimus
+              obcaecati amet placeat et ut tempora, at officiis optio,
+              consequatur nobis. Explicabo, maxime labore.
+            </p>
+
+            <div>
+              <a href="https://www.apple.com/in/app-store/">
+                <img
+                  src="{% static 'images/downloadApp/app-store.jpg' %}"
+                  alt="App Store Image"
+                />
+              </a>
+              <a href="https://play.google.com/store/games?hl=en_IN">
+                <img
+                  src="{% static 'images/downloadApp/google-play.jpg' %}"
+                  alt="Play Store Image"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer">
+      <div class="overall">
+        <div class="newsletter">
+          <div class="newsletter-text">
+            <h1>Subcribe to our Newsletter</h1>
+            <p>Get e-mail updates about our latest shops and special offers</p>
+          </div>
+          <div class="newsletter-input">
+            <input type="text" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="footer-card">
+            <h1>Agrigo</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+              ducimus quae necessitatibus quos similique aspernatur.
+            </p>
+            <div>
+              <i class="fa-brands fa-square-instagram"></i>
+              <i class="fa-brands fa-square-whatsapp"></i>
+              <i class="fa-brands fa-square-facebook"></i>
+            </div>
+          </div>
+          <div class="footer-card">
+            <h1>Menu</h1>
+            <p>Shop</p>
+            <p>About</p>
+            <p>Blog</p>
+            <p>Contact Us</p>
+          </div>
+          <div class="footer-card">
+            <h1>Help</h1>
+            <p>Return and Excahnge</p>
+            <p>Terms and Condition</p>
+            <p>Privacy Policy</p>
+          </div>
+          <div class="footer-card">
+            <h1>Have a question?</h1>
+            <div>
+              <i class="fa-solid fa-location-dot"></i>
+              <p>203 Fake St. Mountain View, San Francisco, California, USA</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-phone"></i>
+              <p>+2 392 3929 210</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-envelope"></i>
+              <p>info@yourdomain.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="copyrights">
+          <p>
+            Copyright ©2024 All rights reserved | This Website is created by
+            Yousuf.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!-- prettier ignore -->
+    {% if messages %} 
+      {% for message in messages %} 
+        {% if "success" in message.tags.split %}
+          <script>
+            setTimeout(function () {
+            alert("Hii {{ user.username }}!, {{ message }}");
+            }, 1000); // Alert appears after 3 seconds
+          </script>
+        {% endif %} 
+      {% endfor %} 
+    {% endif %}
+  </body>
+</html>

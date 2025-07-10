@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+}
+
+.overall{
+    height: 100vh;
+}
+
+header{
+    height: 10vh;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* background-color: lightgoldenrodyellow; */
+}
+
+header > div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+header > div i{
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+}
+
+section{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+nav{
+    width: 270px;
+    height: 90vh;
+    /* background-color: lightcoral; */
+}
+
+nav > div {
+    padding: 15px;
+    /* background-color: lightgray; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+}
+
+nav > div img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+nav > div div h1{
+    font-size: 16px;
+}
+
+nav > div div p{
+    font-size: 14px;
+    color: gray;
+}
+
+nav > ul li{
+    list-style: none;
+    padding: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+nav > ul li:hover{
+    transform: scale(1.05);
+    border-top: 1px solid rgb(182, 182, 182);
+    border-bottom: 1px solid rgb(182, 182, 182);
+}
+
+nav > ul li a{
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > ul li a h1{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+nav > ul li a i{
+    font-size: 18px;
+    color: rgb(182, 182, 182);
+}
+
+.main-page{
+    background-color: #daeeda;
+    width: 90%;
+    height: 90vh;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/* Centered Form */
+.main-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+/* Form Container */
+form {
+    background-color: #fff;
+    width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Form Heading */
+form h2 {
+    color: #4CAF50;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+form label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Input Fields */
+form input, 
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* File Upload */
+input[type="file"] {
+    background-color: #f9f9f9;
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    form {
+        width: 90%;
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriGo - Cart</title>
+    <link rel="stylesheet" href="{% static 'css/Cart.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="cart-title">Your Cart</h1>
+
+        {% if cart_items %}
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.item.item_name }}</td>
+                    <td>₹{{ item.item.item_price }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>₹{{ item.item.item_price|floatformat:2 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3 class="total-price">Total Price: ₹{{ total_price|floatformat:2 }}</h3>
+
+        <div class="button-group">
+            <form action="{% url 'clear_cart' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="clear-cart-btn">Clear Cart</button>
+            </form>
+            <form action="{% url 'ProceedCart' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="proceed-btn">Proceed to Checkout</button>
+            </form>
+        </div>
+        {% else %}
+        <p class="empty-cart-msg">Your cart is empty.</p>
+        <form action="{% url 'AllItems' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="shop-btn">Go to Products</button>
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/65eed8ca1e.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>AgriGo - Add User</title>
+    <link rel="stylesheet" href="{% static 'css/AddItems.css' %}" />
+  </head>
+  <body>
+    <div class="overall">
+      <header>
+        <h1>AgriGo</h1>
+        <div>
+          <i class="fa-regular fa-bell"></i>
+          <a href="/AdminLogin"><i class="fa-solid fa-power-off"></i></a>
+        </div>
+      </header>
+      <section>
+        <nav>
+          <div>
+            <img
+              src="{% static 'images/Dashboard/profile.jpeg' %}"
+              alt="Profile Image"
+            />
+            <div>
+              <h1>Admin Name</h1>
+              <p>Role - Admin</p>
+            </div>
+            <i class="fa-solid fa-bookmark"></i>
+          </div>
+          <ul>
+            <li>
+              <a href="#" class="active">
+                <h1>Dashboard</h1>
+                <i class="fa-solid fa-home"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <h1>Users</h1>
+                <i class="fa-solid fa-user"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <h1>Products</h1>
+                <i class="fa-solid fa-box"></i>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <h1>Settings</h1>
+                <i class="fa-solid fa-cog"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="main-page">
+          <form
+            method="post"
+            enctype="multipart/form-data"
+            action="{% url 'AddItem' %}"
+          >
+            {% csrf_token %}
+
+            <h2>Add User</h2>
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" required />
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" required />
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" />
+            <label for="role">Role</label>
+            <select id="role" name="role">
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+            
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

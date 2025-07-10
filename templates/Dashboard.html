@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item Details View</title>
+    <script
+      src="https://kit.fontawesome.com/65eed8ca1e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'css/Dashboard.css' %}" />
+  </head>
+  <body>
+    <div class="overall">
+      <!-- {% csrf_token %} -->
+      <header>
+        <h1>AgriGo</h1>
+        <div>
+          <i class="fa-regular fa-bell"></i>
+          <a href="/AdminLogin"><i class="fa-solid fa-power-off"></i></a>
+        </div>
+      </header>
+      <section>
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <li class="{{ message.tags }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <nav>
+          <div>
+            <img
+              src="{% static 'images/Dashboard/profile.jpeg' %}"
+              alt="Profile Image"
+            />
+            <div>
+              <h1>{{ request.session.admin_name }}</h1>
+              <p>Role - Admin</p>
+            </div>
+            <i class="fa-solid fa-bookmark"></i>
+          </div>
+          <ul>
+            <li>
+              <a href="/Dashboard" class="active">
+                <h1>Dashboard</h1>
+                <i class="fa-solid fa-home"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/UserDetailsView">
+                <h1>Users</h1>
+                <i class="fa-solid fa-user"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/ItemDetailsView">
+                <h1>Products</h1>
+                <i class="fa-solid fa-box"></i>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <h1>Settings</h1>
+                <i class="fa-solid fa-cog"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="main-page">
+          <div class="row-1">
+            <div class="dashboard">
+              <div>
+                <i class="fa-solid fa-house"></i>
+              </div>
+              <h1>Dashboard</h1>
+            </div>
+            <div>
+              <i class="fa-solid fa-circle-info"></i>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="users card">
+              <div class="card-header">
+                <div>
+                  <h2>Total Users</h2>
+                  <h1>{{ total_users }}+</h1>
+                </div>
+                <div>
+                  <i class="fa-solid fa-users"></i>
+                </div>
+              </div>
+              <div>
+                <h1>Increased by 10%</h1>
+              </div>
+            </div>
+            <div class="products card">
+              <div class="card-header">
+                <div>
+                  <h2>Products</h2>
+                  <h1>{{ total_products }}+</h1>
+                </div>
+                <div>
+                  <i class="fa-solid fa-box"></i>
+                </div>
+              </div>
+              <div>
+                <h1>Decreased by 10%</h1>
+              </div>
+            </div>
+            <div class="revenue card">
+              <div class="card-header">
+                <div>
+                  <h2>Revenue</h2>
+                  <h1>$1,322</h1>
+                </div>
+                <div>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+              </div>
+              <div>
+                <h1>Increased by 20%</h1>
+              </div>
+            </div>
+          </div>
+          <div class="row-3">
+            <div class="insights"></div>
+            <div class="categories">
+              <h1>Categories</h1>
+
+              <img
+                src="{% static 'images/Dashboard/piechart.png' %}"
+                alt="Pie Chart"
+              />
+              <div>
+                <h2>Vegetables</h2>
+                <h2>Fruits</h2>
+                <h2>Cereals</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      setTimeout(function () {
+        var messages = document.querySelector(".messages");
+        if (messages) {
+          messages.style.display = "none";
+        }
+      }, 5000);
+    </script>
+  </body>
+</html>

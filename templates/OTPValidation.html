@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OTP Validation - AgriGo</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/ForgetPassword.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  </head>
+  <body>
+    <img
+      class="wave"
+      src="{% static 'images/Login/wave.png' %}"
+      alt="Background Wave Image"
+    />
+    <div class="container">
+      <div class="img">
+        <img
+          src="{% static 'images/Login/personalization.svg' %}"
+          alt="Background Icon Image"
+        />
+      </div>
+      <div class="login-content">
+        <form method="post" action="{% url 'OTPValidation' %}">
+          {% csrf_token %}
+          <img
+            src="{% static 'images/Login/profilepic.svg' %}"
+            alt="Background Icon Image"
+          />
+          <h2 class="title">Enter Your OTP</h2>
+            <input type="text" class="input" id="otp" name="otp" placeholder="Enter OTP" />
+            <span id="otpError" class="error"></span>
+            <input type="submit" class="btn" value="Submit" />
+          {% if messages %}
+          <div>
+            {% for message in messages %} {% if 'success' in message.tags %}
+            <div class="alert alert-success">{{ message }}</div>
+            {% elif 'error' in message.tags %}
+            <div class="alert alert-danger">{{ message }}</div>
+            {% endif %} {% endfor %}
+          </div>
+          {% endif %}
+        </form>
+      </div>
+    </div>
+    <!-- Link for Javascript -->
+
+  </body>
+</html>

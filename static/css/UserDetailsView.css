@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+}
+
+.overall{
+    height: 100vh;
+}
+
+header{
+    height: 10vh;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* background-color: lightgoldenrodyellow; */
+}
+
+header > div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+header > div i{
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+}
+
+section{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+nav{
+    width: 270px;
+    height: 90vh;
+    /* background-color: lightcoral; */
+}
+
+nav > div {
+    padding: 15px;
+    /* background-color: lightgray; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+}
+
+nav > div img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+nav > div div h1{
+    font-size: 16px;
+}
+
+nav > div div p{
+    font-size: 14px;
+    color: gray;
+}
+
+nav > ul li{
+    list-style: none;
+    padding: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+nav > ul li:hover{
+    transform: scale(1.05);
+    border-top: 1px solid rgb(182, 182, 182);
+    border-bottom: 1px solid rgb(182, 182, 182);
+}
+
+nav > ul li a{
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > ul li a h1{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+nav > ul li a i{
+    font-size: 18px;
+    color: rgb(182, 182, 182);
+}
+
+.main-page{
+    background-color: #daeeda;
+    width: 90%;
+    height: 90vh;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-page .row-1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.main-page .row-1 button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.main-page .row-1 button:hover{
+    background-color: #218838;
+}
+
+.main-page .row-1 button a{
+    color: white;
+    text-decoration: none;
+}
+
+/* .main-page table{
+    width: 95%;
+    border-collapse: collapse;
+}
+
+
+.main-page table tr th,
+.main-page table tr td{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.main-page table tr th{
+    height: 75px;
+}
+
+.main-page table tr td{
+    height: 150px;
+    text-align: center;
+}
+
+.main-page table tr td img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.main-page .table-edit,
+.main-page .table-delete{
+    width: 10%;
+} */
+
+/* General Table Styling */
+table {
+    background-color: #c82333;
+    width: 95%;
+    /* height: 5000px; */
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* overflow-y: hidden; */
+    max-height: 550px; /* Adjust based on design */
+    overflow-y: auto; /* Enable scroll if needed */
+    display: block;
+  }
+  
+.main-page table tbody {
+    display: block;
+    max-height: 550px;
+    overflow-y: hidden;
+}
+
+.main-page table thead,
+.main-page table tbody {
+    display: table;
+    width: 100%;
+}
+
+  
+  /* Table Header */
+  th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  /* Table Rows */
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Zebra Stripes */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Hover Effect */
+  tr:hover {
+    background-color: #ddd;
+    transition: 0.3s;
+  }
+  
+  /* Image Styling */
+  .main-page table tr td img{
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 50%;
+}
+
+.main-page table tr th{
+    height: 50px;
+    text-align: center;
+}
+
+
+.main-page table tr td{
+    height: 100px;
+    text-align: center;
+}
+  
+  /* Edit & Delete Buttons */
+
+.main-page .table-edit,
+.main-page .table-delete{
+    width: 10%;
+} 
+
+.edit-btn, .delete-btn {
+    border: none;
+    cursor: pointer;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.edit-btn {
+    background-color: #28a745; /* Green */
+}
+
+.edit-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Red */
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.edit-btn a, .delete-btn a {
+    color: white !important;
+}
+
+  
+  
+  /* Responsive Table */
+  @media screen and (max-width: 768px) {
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+  

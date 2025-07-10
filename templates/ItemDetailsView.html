@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item Details View</title>
+    <script
+      src="https://kit.fontawesome.com/65eed8ca1e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'css/ItemDetailsView.css' %}" />
+  </head>
+  <body>
+    <div class="overall">
+      <header>
+        <h1>AgriGo</h1>
+        <div>
+          <i class="fa-regular fa-bell"></i>
+          <a href="/AdminLogin"><i class="fa-solid fa-power-off"></i></a>
+        </div>
+      </header>
+      <section>
+        <nav>
+          <div>
+            <img
+              src="{% static 'images/Dashboard/profile.jpeg' %}"
+              alt="Profile Image"
+            />
+            <div>
+              <h1>Admin Name</h1>
+              <p>Role - Admin</p>
+            </div>
+            <i class="fa-solid fa-bookmark"></i>
+          </div>
+          <ul>
+            <li>
+              <a href="/Dashboard" class="active">
+                <h1>Dashboard</h1>
+                <i class="fa-solid fa-home"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/UserDetailsView">
+                <h1>Users</h1>
+                <i class="fa-solid fa-user"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/ItemDetailsView">
+                <h1>Products</h1>
+                <i class="fa-solid fa-box"></i>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <h1>Settings</h1>
+                <i class="fa-solid fa-cog"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="main-page">
+          <div class="row-1">
+            <h2>Item Details</h2>
+            <button><a href="{% url 'AddItem' %}">Add Item</a></button>
+          </div>
+          <table>
+            <tr>
+              <th>Item Code</th>
+              <th>Item Name</th>
+              <th>Item Price</th>
+              <th>Item Description</th>
+              <th>Item Image</th>
+              <th>Item Category</th>
+              <th class="table-edit">Edit</th>
+              <th class="table-delete">Delete</th>
+            </tr>
+            {% for i in obj %}
+            <tr>
+              <td>{{i.item_code}}</td>
+              <td>{{i.item_name}}</td>
+              <td>{{i.item_price}}</td>
+              <td>{{i.item_desc}}</td>
+
+              <td>
+                {% if i.item_image %}
+                <img
+                  src="{{ i.item_image.url }}"
+                  style="width: 100px; height: 100px"
+                />
+                {% else %} No Image Available {% endif %}
+              </td>
+
+              <td>{{i.item_category}}</td>
+
+              <td>
+                <button class="edit-btn">
+                  <a href="{% url 'DeleteItem' i.item_code %}"
+                    ><i class="fa-solid fa-pen-to-square"></i>
+                  </a>
+                </button>
+              </td>
+
+              <td>
+                <button class="delete-btn">
+                  <a href="{% url 'DeleteItem' i.item_code %}"
+                    ><i class="fa-solid fa-trash"></i>
+                  </a>
+                </button>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

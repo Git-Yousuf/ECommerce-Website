@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/65eed8ca1e.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>AgriGo - Add Items</title>
+    <link rel="stylesheet" href="{% static 'css/AddItems.css' %}" />
+  </head>
+  <body>
+    <div class="overall">
+      <header>
+        <h1>AgriGo</h1>
+        <div>
+          <i class="fa-regular fa-bell"></i>
+          <a href="/AdminLogin"><i class="fa-solid fa-power-off"></i></a>
+        </div>
+      </header>
+      <section>
+        <nav>
+          <div>
+            <img
+              src="{% static 'images/Dashboard/profile.jpeg' %}"
+              alt="Profile Image"
+            />
+            <div>
+              <h1>Admin Name</h1>
+              <p>Role - Admin</p>
+            </div>
+            <i class="fa-solid fa-bookmark"></i>
+          </div>
+          <ul>
+            <li>
+              <a href="#" class="active">
+                <h1>Dashboard</h1>
+                <i class="fa-solid fa-home"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <h1>Users</h1>
+                <i class="fa-solid fa-user"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <h1>Products</h1>
+                <i class="fa-solid fa-box"></i>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <h1>Settings</h1>
+                <i class="fa-solid fa-cog"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="main-page">
+          <form
+            method="post"
+            enctype="multipart/form-data"
+            action="{% url 'AddItem' %}"
+          >
+            {% csrf_token %}
+
+            <h2>Add Item</h2>
+            <label for="item_code">Item Code:</label>
+            <input type="number" id="item_code" name="item_code" required />
+            <label for="item_name">Item Name:</label>
+            <input type="text" id="item_name" name="item_name" required />
+            <label for="item_price">Item Price:</label>
+            <input type="number" id="item_price" name="item_price" required />
+            <label for="item_desc">Item Description:</label>
+            <input type="text" id="item_desc" name="item_desc" required />
+            <label for="item_image">Item Image:</label>
+            <input type="file" id="item_image" name="image" required />
+            <label for="item_category">Item Category:</label>
+
+            <select id="item_category" name="item_category">
+              <option value="Fruits">Fruits</option>
+              <option value="Vegetables">Vegetables</option>
+              <option value="Grains">Grains</option>
+            </select>
+            
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

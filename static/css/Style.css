@@ -1,0 +1,1796 @@
+/*
+
+ font-family: "Roboto Flex", sans-serif; - Normal
+ font-family: "DM Serif Display", serif; - Cursive
+
+*/
+
+/*
+
+Table of Content
+1. Universal and General
+2. Home
+3. Items
+4. Categories
+5. Products
+6. Offers
+7. Testimony
+8. Blog
+9. Download App
+10. Footer
+
+*/
+
+/* 1. Universal and General */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.anchor{
+    all: unset;
+}
+
+/* 2. Home */
+
+#home img{
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    filter: brightness(20%);
+    position: relative;
+    object-fit: cover;
+} 
+
+/* #home{
+    position: relative;
+}   */
+
+#home header{
+    height: 90px;
+    position: absolute;
+    top: 25px;
+    right: 85px;
+    z-index: 100;
+}
+
+#home header > div{
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+#home header div nav{
+    background-color: white;
+    height: 90%;
+    width: 800px;
+    padding: 20px;
+    /* border-radius: 30px 0px 30px 10px;  */
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s;
+}
+
+#home header div nav div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+
+#home header div nav a{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: green;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+#home header div nav div:first-child:hover :not(:hover){
+    opacity: 0.5;
+}
+
+#home header div nav button:nth-child(1){
+    width: 37px;
+    height: 60%;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+/* #home header div nav button:nth-child(2){
+    padding: 15px 25px;
+} */
+
+#home header div nav button i{
+    font-size: 28px;
+    color: green;
+}
+
+#home header div nav button i:hover{
+    color: darkgreen;
+}
+
+#home header div nav .login-signup{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+} 
+
+.login-content{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.login-content p{
+    color: darkgreen;
+}
+
+.LoginSignup-btn{
+    gap: 10px;
+}
+
+.hover-btn{
+    border: 1px solid darkgreen;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.hover-btn .logout-btn{
+    padding: 7px 15px !important; 
+    font-size: 10px !important;
+}
+
+.message{
+    display: none;
+}
+
+.hover-btn:hover .message{
+    display: block;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    right: -120%;
+    box-shadow: rgba(0, 0, 0, 1) 0px 5px 15px;
+}
+
+.message-cart{
+    display: none;
+}
+
+.hover-btn-cart:hover .message-cart{
+    display: block;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    right: 15%;
+    box-shadow: rgba(0, 0, 0, 1) 0px 5px 15px;
+}
+
+.bar-icon{
+    list-style-type: none;
+    display: none;
+}
+
+.bar{
+    height: 5px;
+    width: 30px;
+    border-radius: 20% / 90%;
+    background-color: red;
+    transition: 1s;
+    position: relative;
+}
+
+.bar:nth-child(2), 
+.bar:nth-child(3){
+    margin-top: 5px;
+}
+
+.bar-icon:hover .bar:nth-child(1){
+    transform: translateY(10px) rotate(45deg);
+}
+
+.bar-icon:hover .bar:nth-child(3){
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.bar-icon:hover .bar:nth-child(2){
+    transform: rotate(-45deg);
+}
+
+@media only screen and (max-width:950px) {
+    #home header div nav{
+        width: 70px;
+    }
+    #home header div nav a, 
+    #home header div nav button{
+        display: none;
+    }
+    .bar{
+        margin-right: 20px;
+    }
+    .bar-icon{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+#home .text{
+    font-family: "Roboto Flex", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#home .text h1{
+    color: white;
+    font-size: 42px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: "DM Serif Display", serif;
+    letter-spacing: 4px;
+}
+
+#home .text h1:nth-child(2){
+    color: orange;
+    margin-bottom: 15px;
+}
+
+#home .text p{
+    width: 700px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    line-height: 25px;
+    /* letter-spacing: 1px; */
+}
+
+#home .text div{
+    margin-top: 20px;
+}
+
+#home .text div button{
+    padding: 10px 25px;
+    border: none;
+    font-size: 14px;
+    margin-top: 5px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#home .text div button:nth-child(1){
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+#home .text div button:nth-child(1):hover{
+    background-color: rgb(210, 210, 210);
+}
+
+#home .text div button:nth-child(2){
+    background-color: transparent;
+    color: white;
+    margin-left: 5px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+#home .text div button:nth-child(2):hover{
+    background-color: rgba(0, 0, 0,0.4);
+}
+
+@media only screen and (max-width:1650px) {
+    #home .text{
+        left: 30%;
+    }
+}
+
+@media only screen and (max-width:1350px) {
+    #home .text{
+        left: 35%;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    #home .text{
+        left: 40%;
+    }
+}
+
+@media only screen and (max-width:950px) {
+    #home .text h1{
+        font-size: 46px;
+    }
+    #home .text{
+        left: 45%;
+    }
+}
+
+@media only screen and (max-width:850px) {
+    #home header div nav{
+        height: 90%;
+    }
+    #home .text h1{
+        font-size: 36px;
+    }
+    #home .text p{
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    #home header{
+        right: 45px;
+    }
+    #home .text p{
+        width: 550px;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    #home header div nav{
+        height: 70%;
+    }
+    #home .text p{
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    #home .text h1{
+        font-size: 28px;
+    }
+    #home header{
+        right: 25px;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    #home .text p{
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    #home .text p{
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    #home header div nav{
+        height: 60%;
+        width: 55px;
+    }
+    #home header div nav{
+        padding: 14px;
+    }
+    #home .text p{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width:440px) {
+    #home .text h1{
+        font-size: 22px;
+    }
+    #home .text p{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width:380px) {
+    #home .text h1{
+        font-size: 24px;
+    }
+    #home .text p{
+        width: 250px;
+    }
+}
+
+#home .logo{
+    position: absolute;
+    bottom: 25px;
+    right: 85px;
+}
+
+#home .logo div{
+    background-color: white;
+    width: 300px;
+    height: 90px;
+    border-radius: 10px 30px 0px 30px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home .logo img{
+    width: 60%;
+    height: 60%;
+}
+
+@media only screen and (max-width:850px) {
+    #home .logo div{
+        width: 290px;
+        height: 95px;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    #home .logo{
+        right: 45px;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    #home .logo div{
+        width: 250px;
+        height: 75px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    #home .logo{
+        right: 25px;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    #home .logo div{
+        width: 210px;
+        height: 65px;
+    }
+}
+
+/* 3. Items */
+
+#items{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#items .marquee-items{
+    width: 1050px;
+    min-height: 25vh;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#items .marquee-items .marquee-item-one, 
+#items .marquee-items .marquee-item-two,
+#items .marquee-items .marquee-item-three,
+#items .marquee-items .marquee-item-four{
+    min-width: 220px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#items .marquee-items .marquee-item-one:hover div, 
+#items .marquee-items .marquee-item-one:hover span,
+#items .marquee-items .marquee-item-two:hover div, 
+#items .marquee-items .marquee-item-two:hover span,
+#items .marquee-items .marquee-item-three:hover div, 
+#items .marquee-items .marquee-item-three:hover span,
+#items .marquee-items .marquee-item-four:hover div, 
+#items .marquee-items .marquee-item-four:hover span{
+    background-color: #82ae46;
+    transition: 0.7s;
+}
+
+
+
+#items .marquee-items .marquee-item-one div, 
+#items .marquee-items .marquee-item-two div,
+#items .marquee-items .marquee-item-three div,
+#items .marquee-items .marquee-item-four div{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#items .marquee-items .marquee-item-one div{
+    background-color: #e4b2d6;
+}
+
+#items .marquee-items .marquee-item-two div{
+    background-color: #dcc698;
+}
+
+#items .marquee-items .marquee-item-three div{
+    background-color: #a2d1e1;
+}
+
+#items .marquee-items .marquee-item-four div{
+    background-color: #dcd691;
+}
+
+#items .marquee-items div img{
+    width: 50px;
+    height: 50px;
+}
+
+#items .marquee-items div span{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#items .marquee-items .marquee-item-one div span{
+    background-color: #edc2e1;
+}
+
+#items .marquee-items .marquee-item-two div span{
+    background-color: #e3d0a8;
+}
+
+#items .marquee-items .marquee-item-three div span{
+    background-color: #aee2f3;
+}
+
+#items .marquee-items .marquee-item-four div span{
+    background-color: #e9e3a1;
+}
+
+#items .marquee-items div h1{ 
+    font-family: "Roboto Flex", sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+#items .marquee-items div p{
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    font-family: "Roboto Flex", sans-serif;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width:1100px) {
+    #items .marquee-items{
+        padding: 20px;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    #items .marquee-items div{
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width:870px) {
+    #items .marquee-items div{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width:660px) {
+    #items .marquee-items{
+        grid-template-columns: auto;
+    }
+    #items .marquee-items div{
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    #items .marquee-items div{
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width:440px) {
+    #items .marquee-items div{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width:350px) {
+    #items .marquee-items div{
+        width: 200px;
+    }
+}
+
+/* 4. Categories */
+
+#categories{
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#categories .category-heading{
+    margin-top: 50px;
+    width: 1200px;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#categories .category-heading h1{
+    font-family: "DM Serif Display", serif;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+#categories .category-heading button{
+    width: 120px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#categories .category-heading button div{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding-bottom: 5px;
+}
+
+#categories .category-heading button:hover div{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+#categories .category-heading button i{
+    margin-left: 5px;
+}
+
+#categories .category-heading button:hover{
+    color: black;
+}
+
+#categories .category-cards{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.categories-vegetables,
+.categories-fruits,
+.categories-crops{
+    width: 400px;
+    height: 500px;
+    cursor: pointer;
+}
+
+.categories-vegetables img,
+.categories-fruits img,
+.categories-crops img{
+    width: 100%;
+    height: 90%;
+}
+
+.categories-vegetables h1,
+.categories-fruits h1,
+.categories-crops h1{
+    margin-top: 5px;
+    font-weight: 100;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.categories-vegetables:hover img,
+.categories-fruits:hover img,
+.categories-crops:hover img{
+    transition: 0.8s;
+    transform: scale(0.95);
+} 
+
+
+@media only screen and (max-width:1270px) {
+    #categories .category-heading{
+        width: 800px;
+    }
+    #categories .category-cards{
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (max-width:850px) {
+    #categories .category-heading{
+        width: 400px;
+    }
+    #categories .category-cards{
+        grid-template-columns: auto;
+    }
+    .categories-vegetables,
+    .categories-fruits,
+    .categories-crops{
+        width: 500px;
+        height: 600px;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    .categories-vegetables,
+    .categories-fruits,
+    .categories-crops{
+        width: 400px;
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width:430px) {
+    #categories .category-heading{
+        width: 300px;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    #categories .category-cards{
+        grid-template-columns: auto;
+    }
+    .categories-vegetables,
+    .categories-fruits,
+    .categories-crops{
+        width: 300px;
+        height: 400px;
+    }
+    #categories .category-heading h1{
+        align-self: flex-start;
+    }
+    #categories .category-heading div{
+        align-self: flex-end;
+    }
+}
+
+/* 5. Products */
+
+#products{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+#products .products-heading{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#products .products-heading h1{
+    font-family: "DM Serif Display", serif;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+#products .products-cards{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+#products .products-cards .products-card{
+    width: 275px;
+    height: 325px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+} 
+
+#products .products-cards .products-card img{
+    width: 225px;
+    height: 190px;
+}
+
+#products .products-cards .products-card div:nth-child(2){
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#products .products-cards .products-card div:nth-child(2) h1{
+    font-weight: normal;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Roboto Flex", sans-serif;
+}
+
+#products .products-cards .products-card div:nth-child(2) p{
+    color: green;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Roboto Flex", sans-serif;
+}
+
+#products .product-button{
+    margin-top: 10px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#products .product-button button{
+    padding: 15px 25px;
+    border: none;
+    background-color: green;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#products .products-card:hover img{
+    transform: scale(1.1);
+}
+
+#products .products-cards .products-card div:nth-child(3){
+    background-color: white;
+    width: 100%;
+    height: 27%;
+    transition: 1s;
+    position: absolute;
+    bottom: -22%;
+    right: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+#products .products-cards .products-card:hover div:nth-child(3){
+    bottom: 0%;
+    opacity: 1;
+}
+
+#products .products-cards .products-card div:nth-child(3) div:nth-child(1){
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#products .products-cards .products-card div:nth-child(3) div:nth-child(1) button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ffae00;
+    color: white;
+    cursor: pointer;
+}
+
+#products .products-cards .products-card div:nth-child(3) div:nth-child(2){
+    width: 50%;
+    height: 100%;
+}
+
+#products .products-cards .products-card div:nth-child(3) div:nth-child(2) button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffae00;
+    color: white;
+    cursor: pointer;
+}
+
+#products .products-cards .products-card div:nth-child(3) div:nth-child(2) button a{
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (max-width:1250px){
+    #products .products-cards{
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media only screen and (max-width:930px){
+    #products .products-cards{
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (max-width:600px){
+    #products .products-cards{
+        grid-template-columns: auto;
+    }
+}
+
+/* 6. Offers */
+
+#offers{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#offers .overall{
+    position: relative;
+}
+
+#offers .overall img{
+    width: 1500px;
+    height: 750px;
+}
+
+#offers .overall .offers-text{
+    width: 550px;
+    height: 600px;
+    margin-top: 100px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 80px;
+}
+
+#offers .overall .offers-text h1{
+    font-size: 48px;
+}
+
+#offers .overall .offers-text form div{
+    margin-top: 25px;
+}
+
+#offers .overall .offers-text form div .offers-text-name,
+#offers .overall .offers-text form div .offers-text-email{
+    width: 90%;
+    height: 50px;
+    padding-left: 20px;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#offers .overall .offers-text form div .offers-text-check{
+    width: 20px;
+    height: 20px;
+}
+
+#offers .overall .offers-text form div label{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+#offers .overall .offers-text form div .offers-text-submit{
+    width: 40%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+@media only screen and (max-width:1600px) {
+    #offers .overall img{
+        width: 1200px;
+        height: 750px;
+    }
+    #offers .overall .offers-text{
+        right: 25%;
+    }
+}
+
+@media only screen and (max-width:1250px) {
+    #offers .overall img{
+        width: 1000px;
+        height: 750px;
+    }
+    #offers .overall .offers-text{
+        right: 20%;
+    }
+}
+
+@media only screen and (max-width:1050px) {
+    #offers .overall img{
+        width: 700px;
+        height: 750px;
+    }
+    #offers .overall .offers-text{
+        right: 10%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width:750px) {
+    #offers .overall img{
+        width: 500px;
+        height: 550px;
+    }
+    #offers .overall .offers-text{
+        right: 5%;
+        width: 450px;
+        height: 400px;
+        margin-top: 20px;
+    }
+    #offers .overall .offers-text h1{
+        font-size: 38px;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    #offers .overall img{
+        width: 400px;
+        height: 450px;
+    }
+    #offers .overall .offers-text{
+        right: 6%;
+        width: 350px;
+        height: 300px;
+        margin-top: -30px;
+    }
+    #offers .overall .offers-text h1{
+        font-size: 32px;
+    }
+    #offers .overall .offers-text form div .offers-text-name, 
+    #offers .overall .offers-text form div .offers-text-email {
+        width: 70%;
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width:420px) {
+    #offers .overall img{
+        width: 300px;
+        height: 350px;
+    }
+    #offers .overall .offers-text h1{
+        font-size: 26px;
+    }
+    #offers .overall .offers-text{
+        right: 6%;
+        width: 250px;
+        height: 200px;
+        margin-top: -30px;
+    }
+    #offers .overall .offers-text form div .offers-text-name, 
+    #offers .overall .offers-text form div .offers-text-email {
+        width: 70%;
+        height: 30px;
+        font-size: 12px;
+        border-radius: 5px;
+    }
+    #offers .overall .offers-text form div .offers-text-submit {
+        width: 40%;
+        height: 40px;
+        font-size: 12px;
+    }
+}
+
+/* 7. Testimony */
+
+#testimony .overall{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#testimony .overall .testimony-heading{
+    width: 100%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#testimony .overall .testimony-heading h1{
+    font-size: 20px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: green;
+    font-family: "DM Serif Display", serif;
+}
+
+#testimony .overall .testimony-heading p{
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: "Roboto Flex", sans-serif;
+}
+
+#testimony .overall .testimony-cards{
+    width: 1200px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+#testimony .overall .testimony-cards::-webkit-scrollbar {
+    display: none;
+}
+
+#testimony .overall .testimony-cards::-webkit-scrollbar-thumb {
+    background-color: lightgray; 
+    border-radius: 10px;
+}
+
+#testimony .overall .testimony-cards::-webkit-scrollbar-track {
+    background-color: #e6e6e6; 
+    border-radius: 10px; 
+}
+
+
+#testimony .overall .testimony-cards .testimony-card{
+    width: 400px;
+    height: 100%;
+    flex-shrink: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+#testimony .overall .testimony-cards .testimony-card div{
+    position: relative;
+}
+
+#testimony .overall .testimony-cards .testimony-card img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+#testimony .overall .testimony-cards .testimony-card div div{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+#testimony .overall .testimony-cards .testimony-card i{
+    font-size: 18px;
+    color: green;
+}
+
+#testimony .overall .testimony-cards .testimony-card p{
+    text-align: center;
+    line-height: 32px;
+    font-size: 18px;
+    padding: 0px 40px;
+    position: relative;
+    border-left: 1px solid #e6e6e6;
+}
+
+#testimony .overall .testimony-cards .testimony-card p::after{
+    position: absolute;
+    top: 50%;
+    left: -2px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    content: '';
+    width: 3px;
+    height: 30px;
+    background: #82ae46;
+}
+
+#testimony .overall .testimony-cards .testimony-card h1{
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+@media only screen and (max-width:1310px) {
+    #testimony .overall .testimony-cards{
+        width: 800px;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    #testimony .overall .testimony-cards{
+        width: 400px;
+    }
+    #testimony .overall .testimony-heading p{
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width:570px) {
+    #testimony .overall .testimony-heading p{
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width:420px) {
+    #testimony .overall .testimony-heading p{
+        text-align: center;
+    }
+    #testimony .overall .testimony-cards{
+        width: 300px;
+    }
+    #testimony .overall .testimony-cards .testimony-card{
+        width: 300px;
+        height: 90%;
+    }
+    #testimony .overall .testimony-cards .testimony-card img{
+        width: 100px;
+        height: 100px;
+    }
+    #testimony .overall .testimony-cards .testimony-card p{
+        line-height: 28px;
+        font-size: 14px;
+        padding: 0px 30px;
+    }
+}
+
+/* 8. Blog */
+
+#blog .overall{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#blog .blog-cards{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#blog .blog-cards .blog-card{
+    width: 350px;
+    height: 250px;
+    background-color: antiquewhite;
+    position: relative;
+}
+
+#blog .blog-cards .blog-card-five{
+    border: none;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#blog .blog-cards .blog-card-five h1{
+    font-family: "DM Serif Display", serif;
+    letter-spacing: 1px;
+}
+
+#blog .blog-cards .blog-card-five button{
+    font-family: "Roboto Flex", sans-serif;
+    padding: 10px 25px;
+    border: none;
+    background-color: green;
+    color: white;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+#blog .blog-cards .blog-card-five button:hover{
+    background-color: rgb(0, 79, 0);
+}
+
+#blog .blog-cards .blog-card img{
+    width: 100%;
+    height: 100%;
+}
+
+#blog .blog-cards .blog-card div{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    letter-spacing: 1px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#blog .blog-cards .blog-card div:hover{
+    opacity: 1;
+}
+
+#blog .blog-cards .blog-card div p{
+    margin-top: 10px;
+    font-weight: 100;
+}
+
+@media only screen and (max-width:1100px) {
+    #blog .blog-cards .blog-card{
+        width: 250px;
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width:820px) {
+    #blog .blog-cards .blog-card{
+        width: 200px;
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width:660px) {
+    #blog .blog-cards .blog-card-eight,
+    #blog .blog-cards .blog-card-nine{
+        display: none;
+    }
+    #blog .blog-cards{
+        grid-template-columns: auto auto;
+    }
+    #blog .blog-cards .blog-card-five{
+        width: 100%;
+        grid-area: 1/1/2/3;
+    }
+}
+
+@media only screen and (max-width:440px) {
+    #blog .blog-cards{
+        grid-template-columns: auto;
+    }
+    #blog .blog-cards .blog-card-five{
+        grid-area: 1/1/2/2;
+    }
+    #blog .overall{
+        margin-top: 50px;
+    }
+}
+
+/* 9. Download App */
+
+#downloadApp .overall{
+    min-height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#downloadApp .overall .container{
+    width: 1400px;
+    height: 460px;
+    background-color: rgb(255, 193, 78);
+    border-radius: 30px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+#downloadApp .overall .container > div {
+    /* background-color: blue; */
+    width: 700px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#downloadApp .overall .container div h1{
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: "Roboto Flex", sans-serif;
+}
+
+#downloadApp .overall .container div p{
+    font-size: 18px;
+    line-height: 30px;
+    font-family: "Roboto Flex", sans-serif;
+}
+
+#downloadApp .overall .container div div img{
+    width: 170px;
+    height: 50px;
+}
+
+@media only screen and (max-width:1440px) {
+    #downloadApp .overall .container{
+        width: 1200px;
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width:1230px) {
+    #downloadApp .overall .container{
+        width: 1000px;
+        gap: 0px;
+    }
+    #downloadApp .overall .container > div {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width:1030px) {
+    #downloadApp .overall .container{
+        width: 800px;
+        gap: 10px;
+    }
+    #downloadApp .overall .container img{
+        width: 230px;
+        height: 400px;
+    }
+    #downloadApp .overall .container div h1{
+        font-size: 32px;
+    }
+    #downloadApp .overall .container div div img{
+        width: 150px;
+        height: 50px;
+    }
+}
+
+@media only screen and (max-width:830px) {
+    #downloadApp .overall .container{
+        width: 600px;
+        height: 800px;
+        flex-direction: column;
+    }
+    #downloadApp .overall .container > img{
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width:640px) {
+    #downloadApp .overall .container{
+        width: 500px;
+    }
+    #downloadApp .overall .container > div {
+        width: 400px;
+    }
+    #downloadApp .overall .container div h1{
+        font-size: 26px;
+    }
+    #downloadApp .overall .container div p{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width:525px) {
+    #downloadApp .overall .container{
+        width: 400px;
+    }
+    #downloadApp .overall .container > div {
+        width: 300px;
+    }
+    #downloadApp .overall .container div div img{
+        width: 130px;
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width:420px) {
+    #downloadApp .overall .container{
+        width: 300px;
+    }
+    #downloadApp .overall .container > div {
+        width: 200px;
+    }
+    #downloadApp .overall .container div h1{
+        font-size: 22px;
+    }
+    #downloadApp .overall .container div p{
+        line-height: 25px;
+        font-size: 14px;
+    }
+    #downloadApp .overall .container div div img{
+        width: 80px;
+        height: 30px;
+    }
+    #downloadApp .overall .container > img {
+        width: 200px;
+        height: 370px;
+    }
+}
+
+/* 10. Footer */
+
+#footer .overall{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(221, 255, 221);
+}
+
+.newsletter{
+    /* background-color: lightgreen ; */
+    width: 95%;
+    min-height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+}
+
+.newsletter .newsletter-text h1{
+    font-size: 38px;
+    letter-spacing: 2px;
+}
+
+.newsletter .newsletter-input input{
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+    border-left: 1px solid green;
+}
+
+.newsletter .newsletter-input button{
+    height: 40px;
+    width: 100px;
+    border: none;
+    margin-left: -5px;
+    background-color: green;
+    color: white;
+}
+
+#footer .overall .footer{
+    width: 95%;
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#footer .overall .footer .footer-card{
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    /* background-color: #82ae46; */
+}
+
+#footer .overall .footer .footer-card h1{
+    font-size: 38px;
+}
+
+#footer .overall .footer .footer-card p{
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+#footer .overall .footer .footer-card div{
+    margin-top: 25px;
+    font-size: 38px;
+}
+
+.fa-square-instagram{
+    color: palevioletred;
+}
+
+.fa-square-whatsapp{
+    color: lightgreen;
+    margin-left: 5px;
+}
+
+.fa-square-facebook{
+    color: blue;
+    margin-left: 5px;
+}
+
+
+
+@media only screen and (max-width:1450px) {
+    #footer .overall .footer{
+        gap: 0px;
+    }
+}
+
+@media only screen and (max-width:1300px) {
+    #footer .overall .footer{
+        grid-template-columns: auto auto auto;
+        gap: 50px;
+    }
+}
+
+@media only screen and (max-width:1190px) {
+    #footer .overall .footer{
+        gap: 50px;
+    }
+    .newsletter{
+        gap: 100px;
+    }
+}
+
+@media only screen and (max-width:1080px) {
+    #footer .overall .footer{
+        grid-template-columns: auto auto ;
+    }
+}
+
+@media only screen and (max-width:1060px) {
+    .newsletter{
+        gap: 50px;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    .newsletter{
+        flex-direction: column;
+    }
+    .newsletter .newsletter-text{
+        align-self: flex-start;
+    }
+    .newsletter .newsletter-input{
+        align-self: flex-end;
+    }
+}
+
+@media only screen and (max-width:720px) {
+    #footer .overall .footer{
+        gap: 0px;
+    }
+}
+
+@media only screen and (max-width:650px) {
+    #footer .overall .footer{
+        grid-template-columns: auto;
+    }
+}
+
+@media only screen and (max-width:430px) {
+    .newsletter .newsletter-input input{
+        width: 200px;
+    }
+    .newsletter .newsletter-text h1{
+        font-size: 32px;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .newsletter .newsletter-text h1{
+        font-size: 28px;
+    }
+    .newsletter .newsletter-text p{
+        font-size: 14px;
+    }
+    .newsletter .newsletter-input input{
+        width: 150px;
+        height: 30px;
+    }
+    .newsletter .newsletter-input button{
+        height: 30px;
+    }
+}
+
+.copyrights{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: #aee2f3; */
+}
+
+.footer-card:nth-child(4) div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-card:nth-child(4) div i{
+    font-size: 18px;
+}
+
+.footer-card:nth-child(4) div p{
+    margin-top: 0px !important;
+}
